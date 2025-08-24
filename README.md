@@ -1,4 +1,3 @@
-markdown
 # n8n Workflow Outputs Archive
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/masrigaa/n8n-workflow-outputs?style=for-the-badge)
@@ -19,18 +18,13 @@ Outputs are typically organized into subdirectories based on the n8n workflow th
 -   **Reports**: Summaries or processed data.
 -   **Screenshots/Images**: Visual outputs if applicable.
 
-Example structure:
+## 🖼️ Workflow Visual Example
 
+Below is an example of an n8n workflow's visual representation. While the JSON files contain the full workflow definition, including screenshots like this helps in quickly understanding the workflow's logic and flow.
 
-./
-├── workflow-name-1/
-│   ├── output_YYYYMMDD_HHMMSS.json
-│   └── log_YYYYMMDD_HHMMSS.txt
-├── workflow-name-2/
-│   ├── report_latest.csv
-│   └── data_export_v2.json
-└── README.md
-
+<p align="center">
+  <img width="800" height="500" alt="image" src="https://cdn.discordapp.com/attachments/1011316700316192839/1409181632946241577/image.png?ex=68ac722a&is=68ab20aa&hm=e7cc611d51cff2a05c5765e0e19fab37709f41ec74a87a81b5022f2de57c12a9" />
+</p>
 
 ## 🚀 How it's Used
 
