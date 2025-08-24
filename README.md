@@ -1,8 +1,7 @@
 # n8n Workflow Outputs Archive
 
-![GitHub last commit](https://img.shields.io/github/last-commit/masrigaa/n8n-workflow-outputs?style=for-the-badge)
-![GitHub repo size](https://img.shields.io/github/repo-size/masrigaa/n8n-workflow-outputs?style=for-the-badge)
-
+[![GitHub last commit](https://img.shields.io/github/last-commit/masrigaa/n8n-Whatsapp-Chatbot-Using-waha?style=for-the-badge)](https://github.com/masrigaa/n8n-Whatsapp-Chatbot-Using-waha)
+[![GitHub repo size](https://img.shields.io/github/repo-size/masrigaa/n8n-Whatsapp-Chatbot-Using-waha?style=for-the-badge)](https://github.com/masrigaa/n8n-Whatsapp-Chatbot-Using-waha)
 ## 📝 Overview
 
 This repository is a dedicated archive for all outputs and results generated from various [n8n](https://n8n.io/) automation workflows. It serves as a centralized, version-controlled storage for data, logs, reports, and any other artifacts produced by our automated n8n processes.
