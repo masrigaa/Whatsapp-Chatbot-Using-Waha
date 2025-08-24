@@ -1,58 +1,61 @@
-# n8n Workflow Outputs Archive
+# n8n WhatsApp Chatbot with Waha - Outputs Archive
 
-[![GitHub last commit](https://img.shields.io/github/last-commit/masrigaa/n8n-Whatsapp-Chatbot-Using-waha?style=for-the-badge)](https://github.com/masrigaa/n8n-Whatsapp-Chatbot-Using-waha)
-[![GitHub repo size](https://img.shields.io/github/repo-size/masrigaa/n8n-Whatsapp-Chatbot-Using-waha?style=for-the-badge)](https://github.com/masrigaa/n8n-Whatsapp-Chatbot-Using-waha)
-## 📝 Overview
+[![GitHub last commit](https://img.shields.io/github/last-commit/masrigaa/n8n-Whatsapp-Chatbot-Using-waha?style=for-the-badge&label=Last%20Update)](https://github.com/masrigaa/n8n-Whatsapp-Chatbot-Using-waha)
+[![GitHub repo size](https://img.shields.io/github/repo-size/masrigaa/n8n-Whatsapp-Chatbot-Using-waha?style=for-the-badge&label=Repo%20Size)](https://github.com/masrigaa/n8n-Whatsapp-Chatbot-Using-waha)
 
-This repository is a dedicated archive for all outputs and results generated from various [n8n](https://n8n.io/) automation workflows. It serves as a centralized, version-controlled storage for data, logs, reports, and any other artifacts produced by our automated n8n processes.
+---
 
-The primary goal is to ensure easy access, traceability, and historical record-keeping of workflow executions, making it simpler to review, debug, and monitor the performance of our n8n automations.
+## 🚀 Overview
+
+This repository serves as a centralized and version-controlled archive for all outputs and results generated from various [n8n](https://n8n.io/) automation workflows. Specifically, it focuses on storing data and artifacts related to our *WhatsApp Chatbot built using Waha*.
+
+The main purpose is to provide an accessible and traceable history of workflow executions, facilitating easier review, debugging, and monitoring of the chatbot's operational performance.
 
 ## 📁 Repository Structure
 
-Outputs are typically organized into subdirectories based on the n8n workflow that generated them. Each workflow's directory may contain:
+Outputs are systematically organized into subdirectories, with each directory corresponding to a specific n8n workflow. A typical workflow directory may contain:
 
--   **Data Files**: JSON, CSV, or other structured data outputs.
--   **Logs**: Execution logs or error reports.
--   **Reports**: Summaries or processed data.
--   **Screenshots/Images**: Visual outputs if applicable.
+*   *Data Files*: Structured outputs in formats like JSON, CSV, etc.
+*   *Logs*: Execution logs, error reports, or activity records.
+*   *Reports*: Summaries, analytics, or processed data.
+*   *Screenshots/Images*: Visual representations or outputs if applicable.
 
 ## 🖼️ Workflow Visual Example
 
-Below is an example of an n8n workflow's visual representation. While the JSON files contain the full workflow definition, including screenshots like this helps in quickly understanding the workflow's logic and flow.
+Below is a visual representation of an n8n workflow. While the full workflow definitions are available as JSON files, these screenshots offer a quick way to understand the workflow's logic and design at a glance.
 
 <p align="center">
-  <img width="800" height="500" alt="image" src="https://cdn.discordapp.com/attachments/1011316700316192839/1409181632946241577/image.png?ex=68ac722a&is=68ab20aa&hm=e7cc611d51cff2a05c5765e0e19fab37709f41ec74a87a81b5022f2de57c12a9" />
+  <img width="800" alt="Example n8n Workflow" src="https://github.com/user-attachments/assets/0feb49d2-6221-4ad2-8a56-4cc7cbcbabf9" />
 </p>
 
-## 🚀 How it's Used
+## ⚙️ How Outputs Are Generated
 
-n8n workflows are configured to push their relevant outputs directly into this repository. This is typically achieved using Git integration within n8n, or by calling a custom script that handles the commit and push operations to this GitHub repository.
+Our n8n workflows are configured to automatically push their relevant outputs directly into this repository. This integration is typically achieved using n8n's built-in Git capabilities or via custom scripts that handle the commit and push operations to this GitHub repository.
 
-## 🔍 Accessing Outputs
+## ➡️ Accessing Outputs
 
-You can browse the files directly on GitHub or clone the repository to your local machine:
+You can easily browse all stored files directly on GitHub, or clone the repository to your local machine for offline access and analysis:
 
 bash
-git clone https://github.com/masrigaa/n8n-workflow-outputs.git
-cd n8n-workflow-outputs
+git clone https://github.com/masrigaa/n8n-Whatsapp-Chatbot-Using-waha.git
+cd n8n-Whatsapp-Chatbot-Using-waha
 
 
-## ✨ Contribution / Workflow Integration
+## ✨ Contribution & Workflow Integration Guidelines
 
-If you're developing a new n8n workflow or modifying an existing one and want its outputs to be stored here, please ensure:
+If you are developing a new n8n workflow, or modifying an existing one, and wish for its outputs to be stored here, please adhere to the following guidelines:
 
-1.  A dedicated subdirectory for your workflow is created.
-2.  Outputs are clearly named and dated (e.g., `[workflow-name]_YYYYMMDD_HHMMSS.[ext]`).
-3.  Sensitive information is properly handled and not committed.
+1.  *Dedicated Subdirectory*: Create a unique subdirectory for your workflow within the repository.
+2.  *Clear Naming Conventions*: Ensure outputs are clearly named and dated (e.g., [workflow-name]_YYYYMMDD_HHMMSS.[ext]).
+3.  *Sensitive Data Handling: Be mindful of sensitive information; ensure it is properly handled and **not* committed directly to the repository.
 
-For questions about integrating a new workflow, please reach out to [Asla Fikri](https://www.linkedin.com/in/aslamul-fikri-alfirdausi).
+For any questions regarding workflow integration or repository structure, please feel free to reach out to the maintainer.
 
-## 👨‍💻 Developed By
+## 👨‍💻 Developed & Maintained By
 
-This repository is maintained by:
+This repository is developed and maintained by:
 
--   **Asla Fikri**
+-   *Asla Fikri*
     -   [GitHub](https://github.com/masrigaa)
     -   [LinkedIn](https://www.linkedin.com/in/aslamul-fikri-alfirdausi)
 
