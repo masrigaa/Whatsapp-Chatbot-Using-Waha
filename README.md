@@ -57,10 +57,10 @@ Our n8n workflows are configured to automatically push their relevant outputs di
 
 You can easily browse all stored files directly on GitHub, or clone the repository to your local machine for offline access and analysis:
 
-bash
-git clone https://github.com/masrigaa/n8n-Whatsapp-Chatbot-Using-waha.git
-cd n8n-Whatsapp-Chatbot-Using-waha
-
+<pre> 
+   git clone https://github.com/masrigaq/n8n-Whatsapp-Chatbot-Using-waha.git 
+   cd n8n-Whatsapp-Chatbot-Using-waha
+</pre>
 
 ## ✨ Contribution & Workflow Integration Guidelines
 
