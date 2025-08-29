@@ -46,7 +46,7 @@ Before you begin, make sure you have:
 Below is a visual representation of an n8n workflow. While the full workflow definitions are available as JSON files, these screenshots offer a quick way to understand the workflow's logic and design at a glance.
 
 <p align="center">
-  <img width="800" alt="Example n8n Workflow" src="https://cdn.discordapp.com/attachments/1011316700316192839/1409181632946241577/image.png?ex=68ac722a&is=68ab20aa&hm=e7cc611d51cff2a05c5765e0e19fab37709f41ec74a87a81b5022f2de57c12a9" />
+  <img width="800" alt="Example n8n Workflow" src="https://cdn.discordapp.com/attachments/1011316700316192839/1410963679783944272/Screenshot_2025-08-29_190315.png?ex=68b2edd3&is=68b19c53&hm=7f9a967e7f60e0b11cebf8dc56c1cf1e21766c15dc5bc0770e69235b6ddefe14" />
 </p>
 
 ## ⚙️ How Outputs Are Generated
@@ -57,9 +57,8 @@ Our n8n workflows are configured to automatically push their relevant outputs di
 
 You can easily browse all stored files directly on GitHub, or clone the repository to your local machine for offline access and analysis:
 
-<pre> 
-   git clone https://github.com/masrigaq/n8n-Whatsapp-Chatbot-Using-waha.git 
-   cd n8n-Whatsapp-Chatbot-Using-waha
+<pre>git clone https://github.com/masrigaq/n8n-Whatsapp-Chatbot-Using-waha.git 
+cd n8n-Whatsapp-Chatbot-Using-waha
 </pre>
 
 ## ✨ Contribution & Workflow Integration Guidelines
