@@ -891,7 +891,7 @@
           "parameters": [
             {
               "name": "Authorization",
-              "value": "Bearer sk_p2fkr4d6xrvmrj4qjx8guq6fn766zu29"
+              "value": "Bearer <YOUR API KEY>"
             }
           ]
         },
