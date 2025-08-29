@@ -1,17 +1,15 @@
 {
-  "name": "My workflow 3",
   "nodes": [
     {
       "parameters": {},
       "type": "@devlikeapro/n8n-nodes-waha.wahaTrigger",
       "typeVersion": 202502,
       "position": [
-        -464,
-        -128
+        -368,
+        -64
       ],
-      "id": "fb6c381b-743c-47b7-96a9-c0a6d8b796f6",
-      "name": "WAHA Trigger",
-      "webhookId": "7da19413-097a-4acf-a401-6ae3882794d6"
+      "id": "6beec8f2-12f4-42f3-a54c-5172bd0f6654",
+      "name": "WAHA Trigger"
     },
     {
       "parameters": {
@@ -25,26 +23,32 @@
       "type": "@devlikeapro/n8n-nodes-waha.WAHA",
       "typeVersion": 202502,
       "position": [
-        1056,
-        928
+        1248,
+        944
       ],
-      "id": "b5efbf6b-7ace-48de-a0a2-e20887178da2",
-      "name": "Send a text message"
+      "id": "aec19ce4-a65d-49e1-ab2b-c7446eb7c7c9",
+      "name": "Send a text message",
+      "credentials": {
+        "wahaApi": {
+          "id": "bAwYPTJgPJgkLOn3",
+          "name": "WAHA account"
+        }
+      }
     },
     {
       "parameters": {
         "promptType": "define",
         "text": "==User: {{ $json.payload.from }}\nnotifyName: {{ $json.payload._data.notifyName }}\nQuestion/Prompt: {{ $json.payload.body }}",
         "options": {
-          "systemMessage": "=You are a helpful assistant named Olivia Carla. \nYou may refer to yourself as \"Olivia\" or \"Carla\". \nYou were created by Asla Fikri. \n\n⚠️ Rules of Identity:\n- Never say you were created or trained by Google.\n- If asked who created you, say you were developed by Asla Fikri and share:\n  - GitHub: https://github.com/masrigaa\n  - LinkedIn: https://www.linkedin.com/in/aslamul-fikri-alfirdausi\n\n⚠️ Rules of Responses:\n- Always answer in the same language as the user’s question.\n- Never reference or mention any YouTube channel, podcast, or unrelated external content (e.g., \"Presting Podcast\") unless specifically asked.\n- You must always reply in valid JSON array format, never plain text (except when answering \"who created you\").\n- If the answer includes code, wrap the code in triple backticks inside its own JSON object.\n-You must ONLY output a valid JSON array. \n-All objects must be closed properly with commas and braces. \n-Do not cut the answer short. \nIf unsure, output `[{\"text\":\"error\"}]`.\n- if notifyName = asla call him darling when answer in english or sayang when answer with indonesia but if not dont do it.\n\n📌 Example Format:\n[\n  { \"text\": \"penjelasan awal\" },\n  { \"text\": \"```python\\nprint('Hello')\\n```\" },\n  { \"text\": \"penjelasan setelah kode\" }\n]\n\n⚙️ Extra Capabilities:\n1. Image Generation:\n   - If the user wants an image, they must start with `gambar:` in their prompt.\n   - Reply with JSON as usual, embedding only the image description or result.\n2. Link Preview:\n   - When generating a summary or explanation for any link (YouTube, X/Twitter, TikTok, GIF, image, PDF, webpage, or other file):\n    - First, determine the type of content.\n    - For files (GIF, image, PDF, etc.):\n        - Include file type\n        - Include title/filename, size, dimensions, or duration if available\n        - Include thumbnail or preview URL if available\n        - Briefly explain what the file shows\n    - For videos, articles, or webpages:\n        - Include title, description, image, and URL\n        - Present all information as human-readable text\n    - Instead of including raw JSON inside the text, format the preview as human-readable:\n        Title: <title>\n        Description: <description>\n        Image: <image>\n        URL: <url>\n   - Keep everything human-friendly, properly line-broken, and easy to read.\n   - Always output a valid JSON array with objects containing only \"text\".\n   - Do NOT wrap any text in ```json``` or code blocks."
+          "systemMessage": "=You are a helpful assistant named Olivia Carla. \nYou may refer to yourself as \"Olivia\" or \"Carla\". \nYou were created by Asla Fikri. \n\n⚠️ Rules of Identity:\n- Never say you were created or trained by Google.\n- If asked who created you, say you were developed by Asla Fikri and share:\n  - GitHub: https://github.com/masrigaa\n  - LinkedIn: https://www.linkedin.com/in/aslamul-fikri-alfirdausi\n\n⚠️ Rules of Responses:\n- Always answer in the same language as the user’s question.\n- Never reference or mention any YouTube channel, podcast, or unrelated external content (e.g., \"Presting Podcast\") unless specifically asked.\n- You must always reply in valid JSON array format, never plain text (except when answering \"who created you\").\n- If the answer includes code, wrap the code in triple backticks inside its own JSON object.\n-You must ONLY output a valid JSON array. \n-All objects must be closed properly with commas and braces. \n-Do not cut the answer short. \nIf unsure, output `[{\"text\":\"error\"}]`.\n- if notifyName = asla call him darling when answer in english or sayang when answer with indonesia but if not dont do it.\n\n📌 Example Format:\n[\n  { \"text\": \"penjelasan awal\" },\n  { \"text\": \"```python\\nprint('Hello')\\n```\" },\n  { \"text\": \"penjelasan setelah kode\" }\n]\n\n- give a code in json text not code\n\n⚙️ Extra Capabilities:\n1. Image Generation:\n   - If the user wants an image, they must start with `gambar:` in their prompt.\n   - Reply with JSON as usual, embedding only the image description or result.\n2. Link Preview:\n   - When generating a summary or explanation for any link (YouTube, X/Twitter, TikTok, GIF, image, PDF, webpage, or other file):\n    - First, determine the type of content.\n    - For files (GIF, image, PDF, etc.):\n        - Include file type\n        - Include title/filename, size, dimensions, or duration if available\n        - Include thumbnail or preview URL if available\n        - Briefly explain what the file shows\n    - For videos, articles, or webpages:\n        - Include title, description, image, and URL\n        - Present all information as human-readable text\n    - Instead of including raw JSON inside the text, format the preview as human-readable:\n        Title: <title>\n        Description: <description>\n        Image: <image>\n        URL: <url>\n   - Keep everything human-friendly, properly line-broken, and easy to read.\n   - Always output a valid JSON array with objects containing only \"text\".\n   - Do NOT wrap any text in ```json``` or code blocks."
         }
       },
-      "id": "58762b9c-58ec-4890-8dae-bd11b159d4d5",
+      "id": "172bf7e5-082d-4bac-bf08-43707b48a46c",
       "name": "WA AI Response Agent",
       "type": "@n8n/n8n-nodes-langchain.agent",
       "position": [
-        352,
-        912
+        544,
+        928
       ],
       "typeVersion": 1.8,
       "retryOnFail": true,
@@ -53,15 +57,15 @@
     },
     {
       "parameters": {
-        "jsCode": "let raw = $input.first().json.output || \"\";\n\n// Bersihkan block ```json\nraw = raw.replace(/```json/g, \"\").replace(/```/g, \"\").trim();\n\n// Coba parse langsung dulu\ntry {\n  let parsed = JSON.parse(raw);\n  return Array.isArray(parsed) ? parsed.map(x => ({ json: x })) : [{ json: parsed }];\n} catch (e) {\n  // Kalau gagal, coba \"fix\" dengan cara sederhana:\n  // 1. Tambah ']' kalau array kebuka\n  if (raw.trim().startsWith(\"[\") && !raw.trim().endsWith(\"]\")) {\n    raw = raw + \"]\";\n  }\n  // 2. Tambah '}' kalau object kebuka\n  if (raw.trim().startsWith(\"{\") && !raw.trim().endsWith(\"}\")) {\n    raw = raw + \"}\";\n  }\n\n  try {\n    let parsed = JSON.parse(raw);\n    return Array.isArray(parsed) ? parsed.map(x => ({ json: x })) : [{ json: parsed }];\n  } catch (e2) {\n    // Kalau tetap gagal, fallback ke teks mentah\n    return [{ json: { text: raw, error: \"Invalid JSON\" } }];\n  }\n}\n"
+        "jsCode": "let raw = $input.first().json.output || \"\";\n\n// Bersihkan block ```json / ```php / ```\nraw = raw.replace(/```[a-zA-Z]*/g, \"\").replace(/```/g, \"\").trim();\n\nfunction safeParse(str) {\n  try {\n    return JSON.parse(str);\n  } catch {\n    return null;\n  }\n}\n\n// Rekursif parse string JSON sampai jadi object/array\nfunction recursiveJSON(str) {\n  let parsed = safeParse(str);\n  while (typeof parsed === \"string\") {\n    let temp = safeParse(parsed);\n    if (temp === null) break;\n    parsed = temp;\n  }\n  return parsed;\n}\n\n// Deep parse (untuk dalamnya juga)\nfunction deepParse(obj) {\n  if (typeof obj === \"string\") {\n    return recursiveJSON(obj) || obj;\n  } else if (Array.isArray(obj)) {\n    return obj.map(x => deepParse(x));\n  } else if (typeof obj === \"object\" && obj !== null) {\n    let newObj = {};\n    for (let k in obj) {\n      newObj[k] = deepParse(obj[k]);\n    }\n    return newObj;\n  }\n  return obj;\n}\n\nlet parsed = recursiveJSON(raw);\nparsed = deepParse(parsed);\n\nif (parsed) {\n  return Array.isArray(parsed)\n    ? parsed.map(x => ({ json: x }))\n    : [{ json: parsed }];\n}\n\n// fallback\nreturn [{ json: { text: raw, error: \"Invalid JSON\" } }];\n"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        656,
-        912
+        848,
+        928
       ],
-      "id": "e7ea0c0c-a16a-4cad-806d-c46f6dc7a0dc",
+      "id": "8b300d28-a910-4d04-8ddb-513d1e48f99a",
       "name": "JSON Parse",
       "retryOnFail": true
     },
@@ -72,45 +76,11 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        832,
-        912
+        1024,
+        928
       ],
-      "id": "6b39bb03-4326-4254-a56f-712b88de9918",
+      "id": "293060f7-d23b-48ac-bb65-32304e31bcd8",
       "name": "Loop Over Items"
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "loose",
-            "version": 2
-          },
-          "conditions": [
-            {
-              "id": "d02739c7-f540-497a-8e39-681ce6458ecb",
-              "leftValue": "={{ $json.payload.body }}",
-              "rightValue": "gambar:",
-              "operator": {
-                "type": "string",
-                "operation": "contains"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "looseTypeValidation": true,
-        "options": {}
-      },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [
-        -32,
-        -128
-      ],
-      "id": "72a0ff23-ba46-4a60-8dac-7e7c774c0dc1",
-      "name": "If"
     },
     {
       "parameters": {
@@ -119,10 +89,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        176,
-        -144
+        352,
+        -112
       ],
-      "id": "13021600-94d7-4ff4-9c95-b26e47171a83",
+      "id": "bd5ab2f7-6e7b-446c-aa32-da40e3d8d0e4",
       "name": "Code"
     },
     {
@@ -151,12 +121,12 @@
         },
         "options": {}
       },
-      "id": "ec70690e-2fdf-4797-98a7-38160ac668f2",
+      "id": "e8dab185-f249-44d1-aa21-94d486d936e9",
       "name": "Fields - Set Values",
       "type": "n8n-nodes-base.set",
       "position": [
-        368,
-        -144
+        544,
+        -112
       ],
       "typeVersion": 3.4
     },
@@ -164,12 +134,12 @@
       "parameters": {
         "jsCode": "function cleanAndExtractJSON(response) {\n    try {\n        const result = {\n            image_prompt: []\n        };\n\n        const lines = response.split('\\n');\n        let currentPrompt = '';\n\n        for (const line of lines) {\n            if (line.includes('\"prompt\":')) {\n                if (currentPrompt) {\n                    result.image_prompt.push(currentPrompt.trim());\n                }\n                currentPrompt = line.split('\"prompt\":')[1].trim();\n            }\n        }\n\n        if (currentPrompt) {\n            result.image_prompt.push(currentPrompt.trim());\n        }\n\n        return { json: result };\n        \n    } catch (error) {\n        return { \n            json: {\n                image_prompt: []\n            }\n        };\n    }\n}\n\nconst response = $input.first().json.output;\nreturn cleanAndExtractJSON(response);"
       },
-      "id": "709efbd6-c3ad-458b-8d47-e58e05e2cc5c",
+      "id": "7f6c5c6f-11da-4c52-8481-1923fb44627f",
       "name": "Code - Clean Json",
       "type": "n8n-nodes-base.code",
       "position": [
-        800,
-        -144
+        976,
+        -112
       ],
       "executeOnce": false,
       "typeVersion": 2,
@@ -179,12 +149,12 @@
       "parameters": {
         "jsCode": "return $input.first().json.image_prompt.map(prompt => ({\n  json: {\n    body: {\n      prompt: prompt,\n  \"image_size\": {\n    \"width\": $('Fields - Set Values').first().json.width,\n    \"height\": $('Fields - Set Values').first().json.height\n  },\n  \"num_inference_steps\": 12,\n  \"guidance_scale\": 3.5,\n  \"num_images\": 1,\n  \"enable_safety_checker\": true,\n}\n    }\n  }\n));"
       },
-      "id": "7d9b6d60-f49e-4778-9920-5de5b8ff6df3",
+      "id": "6b1bf042-b98a-4a9b-af83-091723761b67",
       "name": "Code - Get Prompt",
       "type": "n8n-nodes-base.code",
       "position": [
-        976,
-        -144
+        1152,
+        -112
       ],
       "typeVersion": 2,
       "alwaysOutputData": true
@@ -193,12 +163,12 @@
       "parameters": {
         "jsCode": "for (let i = 0; i < items.length; i++) {\n  items[i].json.fileName = `images_${(i + 1).toString().padStart(3, '0')}.png`;\n}\nreturn items;"
       },
-      "id": "529747dc-7f22-46bf-b0a8-ba4c662d4e2d",
+      "id": "95b488a2-3205-43cc-aa61-a5b3baaac0e2",
       "name": "Code - Set Filename",
       "type": "n8n-nodes-base.code",
       "position": [
-        1152,
-        -144
+        1328,
+        -112
       ],
       "typeVersion": 2
     },
@@ -211,12 +181,12 @@
           "systemMessage": "=You are an AI image‑prompt creation expert. Please create a post using the following JSON format:\nAI Image Generation Prompt Guidelines:\nObjective\nCreate highly realistic, high‐quality images\nEnsure the image content faithfully conveys the spirit of the original text\nIntegrate short text (10–20 characters) naturally into the image\nMaintain consistency and professionalism\n\nStandard Prompt Structure\n[Main Scene] | [Key Elements] | [Text Integration] | [Lighting & Atmosphere] | [Technical Parameters] | [Style Parameters]\n\nComponent Breakdown\n1. Main Scene (Weight ::8)\nDescribe the primary setting in line with the content.\nExamples:\nTech news: “modern tech office setting, minimalist workspace”\nEconomy news: “professional financial district, corporate environment”\nEducation news: “modern classroom, advanced learning environment”\n\n2. Key Elements (Weight ::8)\nList the main visual elements required.\nExamples:\n“large HD display showing text ‘AI Ethics’ in modern typography”\n“professional people in business attire discussing around interactive screen”\n“detailed infographic elements floating in augmented reality style”\n\n3. Text Integration (Weight ::7)\nHow to display text within the image:\ntext elements | elegant typography, clear readable text, integrated naturally into scene ::7\n\n4. Lighting & Atmosphere (Weight ::7)\nlighting | cinematic dramatic lighting, natural ambient light, professional studio setup ::7\nbackground | depth of field blur, clean professional environment ::6\n\n5. Technical Parameters\nparameters | 8k resolution, hyperrealistic, photorealistic quality, octane render, cinematic composition --ar 16:9\nsettings | sharp focus, high detail, professional photography --s 1000 --q 2\nComplete Examples\nExample 1: AI Ethics News\nprofessional tech conference room | large display showing \"AI Ethics Now\" in modern typography, group of diverse executives in discussion ::8 | clean modern workspace, glass walls, tech atmosphere ::7 | cinematic lighting, natural window light ::7 | 8k resolution, hyperrealistic quality, octane render --ar 16:9 --s 1000 --q 2\nExample 2: Financial Market News\nmodern stock exchange environment | giant LED wall showing \"Market Alert\" in bold typography, professional traders in action ::8 | dynamic financial data visualization, sleek modern interior ::7 | dramatic lighting, blue-tinted atmosphere ::7 | 8k resolution, photorealistic quality --ar 16:9 --s 1000 --q 2\n\nAdditional Parameters\n--chaos [0–100]: Adjust randomness\n--stylize [0–1000]: Degree of stylization\n--seed [number]: Ensure consistency across generations\n--niji: Optimized for Asian‐style aesthetics\n--v 5.2: Use the latest model version\n\nImportant Notes\nText in Image\nKeep it short and legible\nUse professional fonts\nIntegrate naturally into the scene\n\nComposition\nFollow the rule of thirds\nEnsure a clear focal point\nBalance text and imagery\n\nColor\nMatch a professional tone\nProvide sufficient contrast for readability\nMaintain visual consistency\n\nTechnical Details\nAlways use high resolution (8k)\nEnsure professional lighting\nOptimize for sharpness and detail\n\nCommon Pitfalls to Avoid\nOverly generic prompts\nMissing text‐integration guidance\nFailing to specify composition rules\nOmitting key technical parameters\n\nThe structure is:\n{\n  prompt_image {prompt : \"\" , ...}\n}"
         }
       },
-      "id": "93eebb55-2b93-41c7-a66d-b64eb5b5c51c",
+      "id": "a967b01b-51cb-43f2-b2c5-fb228732161f",
       "name": "AI Agent - Create Image From Prompt",
       "type": "@n8n/n8n-nodes-langchain.agent",
       "position": [
-        512,
-        -144
+        688,
+        -112
       ],
       "typeVersion": 1.7,
       "retryOnFail": true
@@ -251,14 +221,20 @@
           }
         }
       },
-      "id": "cda0414e-518d-445f-8cb5-9e7f306b8097",
+      "id": "4ac561b3-de76-4aee-886b-33406bfba806",
       "name": "Google Gemini Chat Model1",
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "position": [
-        512,
+        688,
         32
       ],
-      "typeVersion": 1
+      "typeVersion": 1,
+      "credentials": {
+        "googlePalmApi": {
+          "id": "nimNZsrmvIRJ1A7v",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
     },
     {
       "parameters": {
@@ -268,9 +244,9 @@
       "typeVersion": 2,
       "position": [
         1152,
-        64
+        32
       ],
-      "id": "c96ff364-c938-497b-aeb7-ed8843285cbb",
+      "id": "ee38c083-ded7-438c-b65e-deafbf7fee59",
       "name": "Handle Respons"
     },
     {
@@ -281,9 +257,9 @@
       "typeVersion": 2,
       "position": [
         976,
-        64
+        32
       ],
-      "id": "3003dab9-2ac9-4437-b6e9-783d4535a402",
+      "id": "7bc70faa-f6f7-4b75-b3a3-75f156fc6d7a",
       "name": "Error Handler"
     },
     {
@@ -307,12 +283,12 @@
         },
         "options": {}
       },
-      "id": "f5020de5-cd70-4411-a670-ff6fb6b4e977",
+      "id": "110708b9-be26-4785-8409-c8baf92a0bc5",
       "name": "Create Image",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        800,
-        64
+        1504,
+        -112
       ],
       "retryOnFail": true,
       "typeVersion": 4.2,
@@ -336,10 +312,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        800,
-        272
+        1328,
+        32
       ],
-      "id": "745ed5c5-cd8f-42b1-90b7-c13d38ca5ae8",
+      "id": "0e082869-9bf6-4242-9681-a553af874f64",
       "name": "Change Link To Be Sort"
     },
     {
@@ -354,11 +330,17 @@
       "type": "@devlikeapro/n8n-nodes-waha.WAHA",
       "typeVersion": 202502,
       "position": [
-        1152,
-        272
+        1680,
+        32
       ],
-      "id": "9b879425-c092-437c-ae69-87a851cdbb8e",
-      "name": "Send a text message1"
+      "id": "71d51d57-088b-4dce-8018-09cc92167b8f",
+      "name": "Send a text message1",
+      "credentials": {
+        "wahaApi": {
+          "id": "bAwYPTJgPJgkLOn3",
+          "name": "WAHA account"
+        }
+      }
     },
     {
       "parameters": {
@@ -387,10 +369,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -240,
-        -112
+        -144,
+        -48
       ],
-      "id": "87174df4-0dea-4209-b711-c750cf722911",
+      "id": "da8bfaac-ee86-46d5-b581-023449d77996",
       "name": "If1"
     },
     {
@@ -400,11 +382,17 @@
       "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
       "typeVersion": 1,
       "position": [
-        544,
-        1120
+        1440,
+        624
       ],
-      "id": "90b75f28-9f0e-4377-a35b-6f70f8048a8d",
-      "name": "SerpAPI"
+      "id": "66c5d27c-8b10-4aef-8785-584c912fb530",
+      "name": "SerpAPI",
+      "credentials": {
+        "serpApi": {
+          "id": "FWlZ0kHk9mztXQ8C",
+          "name": "SerpAPI account"
+        }
+      }
     },
     {
       "parameters": {
@@ -424,10 +412,10 @@
       "type": "n8n-nodes-base.httpRequestTool",
       "typeVersion": 4.2,
       "position": [
-        640,
-        1120
+        1536,
+        624
       ],
-      "id": "fc23dd2a-2e27-42d4-8534-10b7a56eb130",
+      "id": "17d2264a-f82e-46a7-9642-1cdab455da3a",
       "name": "Joke API"
     },
     {
@@ -442,25 +430,25 @@
       "type": "n8n-nodes-base.httpRequestTool",
       "typeVersion": 4.2,
       "position": [
-        640,
-        1216
+        1536,
+        736
       ],
-      "id": "e398f25b-7e5c-4cb9-8a0e-521dc4c819b6",
+      "id": "39cf843f-9703-4278-a73d-9d4d9c50c139",
       "name": "API docs"
     },
     {
       "parameters": {
         "sessionIdType": "customKey",
-        "sessionKey": "={{ $('If').item.json.payload.from }}",
+        "sessionKey": "={{ $('Switch1').item.json.payload.from }}",
         "contextWindowLength": 20
       },
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.3,
       "position": [
-        448,
-        1088
+        640,
+        1072
       ],
-      "id": "e10c532d-3be1-468b-a09b-04b851a32148",
+      "id": "6abfa26c-a137-4499-9e9b-3a54a9d2cc15",
       "name": "Simple Memory"
     },
     {
@@ -491,10 +479,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        144,
-        512
+        336,
+        480
       ],
-      "id": "d7b1367b-39fe-4f62-9542-b26924b7a88d",
+      "id": "1aec4124-a78e-424f-a446-7102b318a978",
       "name": "If2"
     },
     {
@@ -503,9 +491,9 @@
         "operation": "analyze",
         "modelId": {
           "__rl": true,
-          "value": "models/gemini-2.5-pro",
+          "value": "models/gemini-2.5-flash",
           "mode": "list",
-          "cachedResultName": "models/gemini-2.5-pro"
+          "cachedResultName": "models/gemini-2.5-flash"
         },
         "text": "={{ $json.body }}",
         "imageUrls": "={{ $json.mediaUrl }}",
@@ -514,12 +502,18 @@
       "type": "@n8n/n8n-nodes-langchain.googleGemini",
       "typeVersion": 1,
       "position": [
-        784,
-        448
+        800,
+        384
       ],
-      "id": "3862f25c-9645-4eb5-a6cf-f9aa3e50c6a7",
+      "id": "46ec7a44-cf3b-4f04-a442-93c22b3de98c",
       "name": "Analyze image",
-      "retryOnFail": true
+      "retryOnFail": true,
+      "credentials": {
+        "googlePalmApi": {
+          "id": "nimNZsrmvIRJ1A7v",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
     },
     {
       "parameters": {
@@ -533,26 +527,32 @@
       "type": "@devlikeapro/n8n-nodes-waha.WAHA",
       "typeVersion": 202502,
       "position": [
-        1760,
-        608
+        1632,
+        400
       ],
-      "id": "b8e9e09f-432f-4460-bd13-8bb4720dd676",
-      "name": "Send a text message2"
+      "id": "809882bf-bdd5-43a5-940b-319226846c0e",
+      "name": "Send a text message2",
+      "credentials": {
+        "wahaApi": {
+          "id": "bAwYPTJgPJgkLOn3",
+          "name": "WAHA account"
+        }
+      }
     },
     {
       "parameters": {
         "promptType": "define",
         "text": "==User: {{ $('If1').item.json.payload.from }}\nnotifyName: {{ $('If1').item.json.payload._data.notifyName }}\nQuestion/Prompt: {{ $('If1').item.json.payload.body }}\nAnalyze: {{ $json.content.parts[0].text }}",
         "options": {
-          "systemMessage": "=You are a helpful assistant named Olivia Carla. \nYou may refer to yourself as \"Olivia\" or \"Carla\". \nYou were created by Asla Fikri. \n\n⚠️ Rules of Identity:\n- Never say you were created or trained by Google.\n- If asked who created you, say you were developed by Asla Fikri and share:\n  - GitHub: https://github.com/masrigaa\n  - LinkedIn: https://www.linkedin.com/in/aslamul-fikri-alfirdausi\n\n⚠️ Rules of Responses:\n- Always answer in the same language as the user’s question.\n- Never reference or mention any YouTube channel, podcast, or unrelated external content (e.g., \"Presting Podcast\") unless specifically asked.\n- You must always reply in valid JSON array format, never plain text (except when answering \"who created you\").\n- If the answer includes code, wrap the code in triple backticks inside its own JSON object.\n-You must ONLY output a valid JSON array. \n-All objects must be closed properly with commas and braces. \n-Do not cut the answer short. \nIf unsure, output `[{\"text\":\"error\"}]`.\n- if notifyName = asla call him darling when answer in english or sayang when answer with indonesia but if not dont do it.\n\n📌 Example Format:\n[\n  { \"text\": \"penjelasan awal\" },\n  { \"text\": \"```python\\nprint('Hello')\\n```\" },\n  { \"text\": \"penjelasan setelah kode\" }\n]\n\n⚙️ Extra Capabilities:\n1. Image Generation:\n   - If the user wants an image, they must start with `gambar:` in their prompt.\n   - Reply with JSON as usual, embedding only the image description or result.\n2. Image Analyze :\n   - Act as an image analysis expert. Analyze the image based on this description: \"{{ $json.content.parts[0].text }}\". \nExplain it as if you are observing and analyzing it yourself. Focus on details, composition, colors, objects, and context. \nDo not mention that you cannot see the image or your limitations.\n"
+          "systemMessage": "=You are a helpful assistant named Olivia Carla. \nYou may refer to yourself as \"Olivia\" or \"Carla\". \nYou were created by Asla Fikri. \n\n⚠️ Rules of Identity:\n- Never say you were created or trained by Google.\n- If asked who created you, say you were developed by Asla Fikri and share:\n  - GitHub: https://github.com/masrigaa\n  - LinkedIn: https://www.linkedin.com/in/aslamul-fikri-alfirdausi\n\n⚠️ Rules of Responses:\n- Always answer in the same language as the user’s question.\n- Never reference or mention any YouTube channel, podcast, or unrelated external content (e.g., \"Presting Podcast\") unless specifically asked.\n- You must always reply in valid JSON array format, never plain text (except when answering \"who created you\").\n- If the answer includes code, wrap the code in triple backticks inside its own JSON object.\n-You must ONLY output a valid JSON array. \n-All objects must be closed properly with commas and braces. \n-Do not cut the answer short. \nIf unsure, output `[{\"text\":\"error\"}]`.\n- if notifyName = asla call him darling when answer in english or sayang when answer with indonesia but if not dont do it.\n\n📌 Example Format:\n[\n  { \"text\": \"penjelasan awal\" },\n  { \"text\": \"```python\\nprint('Hello')\\n```\" },\n  { \"text\": \"penjelasan setelah kode\" }\n]\n\n- give a code in json text not code\n\n⚙️ Extra Capabilities:\n1. Image Generation:\n   - If the user wants an image, they must start with `gambar:` in their prompt.\n   - Reply with JSON as usual, embedding only the image description or result.\n2. Image Analyze :\n   - Act as an image analysis expert. Analyze the image based on this description: \"{{ $json.content.parts[0].text }}\". \nExplain it as if you are observing and analyzing it yourself. Focus on details, composition, colors, objects, and context. \nDo not mention that you cannot see the image or your limitations.\n"
         }
       },
-      "id": "56d96fa5-5f78-4d8d-8cf4-515720fcaceb",
+      "id": "24d6e567-729c-451d-99f5-218dd646fedd",
       "name": "WA AI Response Agent1",
       "type": "@n8n/n8n-nodes-langchain.agent",
       "position": [
-        1008,
-        448
+        960,
+        384
       ],
       "typeVersion": 1.8,
       "retryOnFail": true,
@@ -561,15 +561,15 @@
     },
     {
       "parameters": {
-        "jsCode": "let raw = $input.first().json.output || $input.first().json.content.parts[0].text || \"\";\n\n// Bersihkan block ```json\nraw = raw.replace(/```json/g, \"\").replace(/```/g, \"\").trim();\n\n// Coba parse langsung dulu\ntry {\n  let parsed = JSON.parse(raw);\n  return Array.isArray(parsed) ? parsed.map(x => ({ json: x })) : [{ json: parsed }];\n} catch (e) {\n  // Kalau gagal, coba \"fix\" dengan cara sederhana:\n  // 1. Tambah ']' kalau array kebuka\n  if (raw.trim().startsWith(\"[\") && !raw.trim().endsWith(\"]\")) {\n    raw = raw + \"]\";\n  }\n  // 2. Tambah '}' kalau object kebuka\n  if (raw.trim().startsWith(\"{\") && !raw.trim().endsWith(\"}\")) {\n    raw = raw + \"}\";\n  }\n\n  try {\n    let parsed = JSON.parse(raw);\n    return Array.isArray(parsed) ? parsed.map(x => ({ json: x })) : [{ json: parsed }];\n  } catch (e2) {\n    // Kalau tetap gagal, fallback ke teks mentah\n    return [{ json: { text: raw, error: \"Invalid JSON\" } }];\n  }\n}\n"
+        "jsCode": "let raw = $input.first().json.output || $input.first().json.content?.parts?.[0]?.text || \"\";\n\n// Bersihkan block ```json / ```php / ```\nraw = raw.replace(/```[a-zA-Z]*/g, \"\").replace(/```/g, \"\").trim();\n\nfunction safeParse(str) {\n  try {\n    return JSON.parse(str);\n  } catch {\n    return null;\n  }\n}\n\n// Rekursif parse string JSON sampai jadi object/array\nfunction recursiveJSON(str) {\n  let parsed = safeParse(str);\n  while (typeof parsed === \"string\") {\n    let temp = safeParse(parsed);\n    if (temp === null) break;\n    parsed = temp;\n  }\n  return parsed;\n}\n\n// Deep parse (untuk dalamnya juga)\nfunction deepParse(obj) {\n  if (typeof obj === \"string\") {\n    return recursiveJSON(obj) || obj;\n  } else if (Array.isArray(obj)) {\n    return obj.map(x => deepParse(x));\n  } else if (typeof obj === \"object\" && obj !== null) {\n    let newObj = {};\n    for (let k in obj) {\n      newObj[k] = deepParse(obj[k]);\n    }\n    return newObj;\n  }\n  return obj;\n}\n\nlet parsed = recursiveJSON(raw);\nparsed = deepParse(parsed);\n\nif (parsed) {\n  return Array.isArray(parsed)\n    ? parsed.map(x => ({ json: x }))\n    : [{ json: parsed }];\n}\n\n// fallback\nreturn [{ json: { text: raw, error: \"Invalid JSON\" } }];\n"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1360,
-        592
+        1264,
+        384
       ],
-      "id": "d885ab33-6179-41da-a390-957ebf1db711",
+      "id": "9171ed59-f5ee-467a-89fc-bd741989ba96",
       "name": "JSON Parse1",
       "retryOnFail": true
     },
@@ -580,10 +580,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        1536,
-        592
+        1440,
+        384
       ],
-      "id": "2db11ff3-adf1-4ca2-aedb-386090b9f560",
+      "id": "e3bd7255-2c95-4043-bb15-09fd336394c7",
       "name": "Loop Over Items1"
     },
     {
@@ -593,11 +593,17 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        1008,
-        592
+        960,
+        528
       ],
-      "id": "02d34a59-6442-4d0a-af1d-e15079167ff8",
-      "name": "Google Gemini Chat Model2"
+      "id": "f30ae61a-c9c8-4dce-8945-0a3c2233cd3a",
+      "name": "Google Gemini Chat Model2",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "nimNZsrmvIRJ1A7v",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
     },
     {
       "parameters": {
@@ -606,35 +612,28 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        352,
-        1056
+        544,
+        1072
       ],
-      "id": "f805b301-5599-475c-8921-aa8832146bfa",
-      "name": "Google Gemini Chat Model"
+      "id": "53d9ce91-bedd-473a-8b3b-3193e5b6e32c",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "nimNZsrmvIRJ1A7v",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
     },
     {
       "parameters": {},
       "type": "@n8n/n8n-nodes-langchain.toolWikipedia",
       "typeVersion": 1,
       "position": [
-        544,
-        1216
+        1440,
+        736
       ],
-      "id": "3d81a545-1fbe-459d-be96-b552bbc0438c",
+      "id": "d295cb83-ffa8-4300-954e-fc2fe53c9a69",
       "name": "Wikipedia"
-    },
-    {
-      "parameters": {
-        "jsCode": "return [\n  {\n    json: {\n      body: $input.first().json.payload.body,\n      mediaUrl: $input.first().json.payload.mediaUrl.replace(\n        \"http://localhost:3000\",\n        //replace this link if not statis\n        \"https://ripe-trap-versus-deviant.trycloudflare.com\"\n      )\n    }\n  }\n];\n"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        576,
-        448
-      ],
-      "id": "8db49cb3-84ff-462f-9c8e-8dcb3596a5d7",
-      "name": "replace localhost to other link"
     },
     {
       "parameters": {
@@ -652,11 +651,17 @@
       "type": "@n8n/n8n-nodes-langchain.googleGemini",
       "typeVersion": 1,
       "position": [
-        784,
-        592
+        800,
+        512
       ],
-      "id": "a6b9b85f-4c30-4b01-9d47-26a1896b56ea",
-      "name": "Analyze document"
+      "id": "667e67ae-dfd1-481c-8a79-5c0c5cdc7cc3",
+      "name": "Analyze document",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "nimNZsrmvIRJ1A7v",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
     },
     {
       "parameters": {
@@ -670,11 +675,17 @@
       "type": "@devlikeapro/n8n-nodes-waha.WAHA",
       "typeVersion": 202502,
       "position": [
-        576,
-        736
+        800,
+        784
       ],
-      "id": "b92a3824-cc4b-4c65-97c0-d18571021921",
-      "name": "Send a text message3"
+      "id": "b5d5aea2-dc40-4fdd-be1e-46ad49fb9f3e",
+      "name": "Send a text message3",
+      "credentials": {
+        "wahaApi": {
+          "id": "bAwYPTJgPJgkLOn3",
+          "name": "WAHA account"
+        }
+      }
     },
     {
       "parameters": {
@@ -683,32 +694,11 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        976,
-        272
+        1504,
+        32
       ],
-      "id": "466a639e-a55b-48b0-95ab-026896e38dec",
+      "id": "eb46bbd1-a604-4f93-9b9e-0c52e6ac2087",
       "name": "Format Response"
-    },
-    {
-      "parameters": {
-        "resource": "video",
-        "modelId": {
-          "__rl": true,
-          "value": "models/veo-3.0-generate-preview",
-          "mode": "list",
-          "cachedResultName": "models/veo-3.0-generate-preview"
-        },
-        "prompt": "swimming cat",
-        "options": {}
-      },
-      "type": "@n8n/n8n-nodes-langchain.googleGemini",
-      "typeVersion": 1,
-      "position": [
-        -352,
-        896
-      ],
-      "id": "23538703-60a8-4652-8c0e-9eae705c441e",
-      "name": "Generate a video"
     },
     {
       "parameters": {
@@ -724,7 +714,7 @@
                 },
                 "conditions": [
                   {
-                    "leftValue": "={{ $json.payload.media.mimetype }}",
+                    "leftValue": "={{ $('If2').item.json.payload.media.mimetype }}",
                     "rightValue": "image/",
                     "operator": {
                       "type": "string",
@@ -749,7 +739,7 @@
                 "conditions": [
                   {
                     "id": "545c1c23-7259-4b4b-8e0f-9772e090f626",
-                    "leftValue": "={{ $json.payload.media.mimetype }}",
+                    "leftValue": "={{ $('If2').item.json.payload.media.mimetype }}",
                     "rightValue": "application/pdf",
                     "operator": {
                       "type": "string",
@@ -772,8 +762,54 @@
                 },
                 "conditions": [
                   {
+                    "id": "4a12050e-201d-4563-97b9-3ca95ee4b57d",
+                    "leftValue": "={{ $('If2').item.json.payload.media.mimetype }}",
+                    "rightValue": "audio/",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "audio"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "35475d7a-342c-4ff5-8166-aa94c73fe9ec",
+                    "leftValue": "={{ $('If2').item.json.payload.media.mimetype }}",
+                    "rightValue": "video/",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
                     "id": "8ccf1099-e229-4552-b2b0-a39a13a8ea18",
-                    "leftValue": "={{ $json.payload.media.mimetype }}",
+                    "leftValue": "={{ $('If2').item.json.payload.media.mimetype }}",
                     "rightValue": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
                     "operator": {
                       "type": "string",
@@ -798,6 +834,175 @@
                 "conditions": [
                   {
                     "id": "51beeaa4-2e19-4a9f-913c-ce9ef8d19ec0",
+                    "leftValue": "={{ $('If2').item.json.payload.hasMedia }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "boolean",
+                      "operation": "true",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        624,
+        400
+      ],
+      "id": "209743f6-9e66-40ee-9086-f93ec0081cf6",
+      "name": "Switch"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        1632,
+        624
+      ],
+      "id": "944fddd0-323c-45ed-a1f7-75500518cb7e",
+      "name": "Calculator"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1.1,
+      "position": [
+        1632,
+        736
+      ],
+      "id": "b76fd387-2846-4713-ae20-47194c3f010c",
+      "name": "Think"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Getting Preview from third party peekalink",
+        "method": "POST",
+        "url": "https://api.peekalink.io",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer sk_p2fkr4d6xrvmrj4qjx8guq6fn766zu29"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "link",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Value', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        1536,
+        848
+      ],
+      "id": "9d957a82-06d0-43e8-9058-317c23d9ef25",
+      "name": "Peekalink"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.payload.body }}",
+                    "rightValue": "gambar:",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    },
+                    "id": "4c4335f5-5543-4782-add9-df081acaea17"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "gambar:"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "d80858a6-f6f8-4736-97ac-27564cca4de6",
+                    "leftValue": "={{ $json.payload.body }}",
+                    "rightValue": "code:",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "code:"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "598ea3c2-e476-4d65-a926-b6ceb277e6c4",
+                    "leftValue": "={{ $json.payload.body }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "notEmpty",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "else"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "77403180-069b-4281-ae56-29f01d3a578f",
                     "leftValue": "={{ $json.payload.hasMedia }}",
                     "rightValue": "",
                     "operator": {
@@ -817,140 +1022,194 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        336,
-        464
+        64,
+        -96
       ],
-      "id": "aa3e5628-9de2-41aa-8243-4f11a4190b05",
-      "name": "Switch"
+      "id": "2dcbdeea-caee-4424-b5e1-3e3428b5fa73",
+      "name": "Switch1"
     },
     {
       "parameters": {
-        "jsCode": "return [\n  {\n    json: {\n      body: $input.first().json.payload.body,\n      mediaUrl: $input.first().json.payload.mediaUrl.replace(\n        \"http://localhost:3000\",\n        //replace this link if not statis\n        \"https://ripe-trap-versus-deviant.trycloudflare.com\"\n      )\n    }\n  }\n];\n"
+        "model": "meta-llama/llama-3.3-70b-instruct:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        336,
+        320
+      ],
+      "id": "020dffb9-4283-4347-9b0f-e35c92df09a9",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "NttXaGZRui1gmHcN",
+          "name": "OpenRouter account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Text",
+        "session": "={{ $('WAHA Trigger').item.json.session }}",
+        "chatId": "={{ $('WAHA Trigger').item.json.payload.from }}",
+        "text": "={{ $json.text }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        1040,
+        192
+      ],
+      "id": "f1fcd64b-e845-4093-bbf5-f20f7657d546",
+      "name": "Send a text message4",
+      "credentials": {
+        "wahaApi": {
+          "id": "bAwYPTJgPJgkLOn3",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "==User: {{ $json.payload.from }}\nnotifyName: {{ $json.payload._data.notifyName }}\nQuestion/Prompt: {{ $json.payload.body }}",
+        "options": {
+          "systemMessage": "=You are a helpful assistant named Olivia Carla. \nYou may refer to yourself as \"Olivia\" or \"Carla\". \nYou were created by Asla Fikri. \n\n⚠️ Rules of Identity:\n- Never say you were created or trained by Google.\n- If asked who created you, say you were developed by Asla Fikri and share:\n  - GitHub: https://github.com/masrigaa\n  - LinkedIn: https://www.linkedin.com/in/aslamul-fikri-alfirdausi\n\n⚠️ Rules of Responses:\n- Always answer in the same language as the user’s question.\n- Never reference or mention any YouTube channel, podcast, or unrelated external content (e.g., \"Presting Podcast\") unless specifically asked.\n- You must always reply in valid JSON array format, never plain text (except when answering \"who created you\").\n- If the answer includes code, wrap the code in triple backticks inside its own JSON object.\n-You must ONLY output a valid JSON array. \n-All objects must be closed properly with commas and braces. \n-Do not cut the answer short. \nIf unsure, output `[{\"text\":\"error\"}]`.\n- if notifyName = asla call him darling when answer in english or sayang when answer with indonesia but if not dont do it.\n\n📌 Example Format:\n[\n  { \"text\": \"penjelasan awal\" },\n  { \"text\": \"```python\\nprint('Hello')\\n```\" },\n  { \"text\": \"penjelasan setelah kode\" }\n]\n\n- give a code in json text not code\n\n⚙️ Extra Capabilities:\n1. Image Generation:\n   - If the user wants an image, they must start with `gambar:` in their prompt.\n   - Reply with JSON as usual, embedding only the image description or result.\n2. Link Preview:\n   - When generating a summary or explanation for any link (YouTube, X/Twitter, TikTok, GIF, image, PDF, webpage, or other file):\n    - First, determine the type of content.\n    - For files (GIF, image, PDF, etc.):\n        - Include file type\n        - Include title/filename, size, dimensions, or duration if available\n        - Include thumbnail or preview URL if available\n        - Briefly explain what the file shows\n    - For videos, articles, or webpages:\n        - Include title, description, image, and URL\n        - Present all information as human-readable text\n    - Instead of including raw JSON inside the text, format the preview as human-readable:\n        Title: <title>\n        Description: <description>\n        Image: <image>\n        URL: <url>\n   - Keep everything human-friendly, properly line-broken, and easy to read.\n   - Always output a valid JSON array with objects containing only \"text\".\n   - Do NOT wrap any text in ```json``` or code blocks."
+        }
+      },
+      "id": "040de702-1b9a-4565-bb1f-b9c79b865bd5",
+      "name": "WA AI Response Agent2",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        336,
+        176
+      ],
+      "typeVersion": 1.8,
+      "retryOnFail": true,
+      "waitBetweenTries": 100,
+      "maxTries": 2
+    },
+    {
+      "parameters": {
+        "jsCode": "let raw = $input.first().json.output || \"\";\n\n// Bersihkan block ```json / ```php / ```\nraw = raw.replace(/```[a-zA-Z]*/g, \"\").replace(/```/g, \"\").trim();\n\nfunction safeParse(str) {\n  try {\n    return JSON.parse(str);\n  } catch {\n    return null;\n  }\n}\n\n// Rekursif parse string JSON sampai jadi object/array\nfunction recursiveJSON(str) {\n  let parsed = safeParse(str);\n  while (typeof parsed === \"string\") {\n    let temp = safeParse(parsed);\n    if (temp === null) break;\n    parsed = temp;\n  }\n  return parsed;\n}\n\n// Deep parse (untuk dalamnya juga)\nfunction deepParse(obj) {\n  if (typeof obj === \"string\") {\n    return recursiveJSON(obj) || obj;\n  } else if (Array.isArray(obj)) {\n    return obj.map(x => deepParse(x));\n  } else if (typeof obj === \"object\" && obj !== null) {\n    let newObj = {};\n    for (let k in obj) {\n      newObj[k] = deepParse(obj[k]);\n    }\n    return newObj;\n  }\n  return obj;\n}\n\nlet parsed = recursiveJSON(raw);\nparsed = deepParse(parsed);\n\nif (parsed) {\n  return Array.isArray(parsed)\n    ? parsed.map(x => ({ json: x }))\n    : [{ json: parsed }];\n}\n\n// fallback\nreturn [{ json: { text: raw, error: \"Invalid JSON\" } }];\n"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        576,
-        592
+        640,
+        176
       ],
-      "id": "105b0a84-bde7-4817-8917-a82a3d501191",
-      "name": "replace localhost to other link1"
-    },
-    {
-      "parameters": {},
-      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
-      "typeVersion": 1,
-      "position": [
-        736,
-        1120
-      ],
-      "id": "6eec74a6-869d-4532-b882-efce58523736",
-      "name": "Calculator"
-    },
-    {
-      "parameters": {},
-      "type": "@n8n/n8n-nodes-langchain.toolThink",
-      "typeVersion": 1.1,
-      "position": [
-        736,
-        1216
-      ],
-      "id": "94bcfca7-5242-4819-9253-de51d4f19f97",
-      "name": "Think"
-    },
-    {
-      "parameters": {
-        "toolDescription": "Getting Preview from third party peekalink",
-        "method": "POST",
-        "url": "https://api.peekalink.io",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "Authorization",
-              "value": "Bearer <YOUR API>"
-            }
-          ]
-        },
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "link",
-              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Value', ``, 'string') }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequestTool",
-      "typeVersion": 4.2,
-      "position": [
-        832,
-        1120
-      ],
-      "id": "5bac53c1-b660-4c82-b34d-715626c4905b",
-      "name": "Peekalink"
+      "id": "480f5956-4253-4c65-8260-1bdcf6047a5a",
+      "name": "JSON Parse2",
+      "retryOnFail": true
     },
     {
       "parameters": {
         "options": {}
       },
-      "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        816,
+        176
+      ],
+      "id": "a3b1aa14-53fc-43b1-adb1-edd02576197c",
+      "name": "Loop Over Items2"
+    },
+    {
+      "parameters": {
+        "content": "## Replace this\n**with waha link** ",
+        "height": 272,
+        "width": 150
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        448,
+        352
+      ],
+      "typeVersion": 1,
+      "id": "4ef9f559-4e21-437e-8798-56af6ec461ff",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dateTimeTool",
+      "typeVersion": 2,
+      "position": [
+        1632,
+        848
+      ],
+      "id": "e628b27a-9b1f-4ae1-a518-a1bfcba53656",
+      "name": "Date & Time"
+    },
+    {
+      "parameters": {
+        "cityName": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('City', ``, 'string') }}",
+        "language": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Language', ``, 'string') }}"
+      },
+      "type": "n8n-nodes-base.openWeatherMapTool",
       "typeVersion": 1,
       "position": [
-        1104,
-        656
+        1440,
+        848
       ],
-      "id": "584c4e3d-a5af-4be3-b288-6d1e26891f21",
-      "name": "SerpAPI1"
+      "id": "13bef7d3-dd3d-4818-b17d-0b1930c2c186",
+      "name": "OpenWeatherMap",
+      "credentials": {
+        "openWeatherMapApi": {
+          "id": "1TMFH03YL5LABSp9",
+          "name": "OpenWeatherMap account"
+        }
+      }
     },
     {
-      "parameters": {},
-      "type": "@n8n/n8n-nodes-langchain.toolWikipedia",
+      "parameters": {
+        "resource": "audio",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-flash",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-flash"
+        },
+        "text": "={{ $json.body }}",
+        "audioUrls": "={{ $json.mediaUrl }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
       "typeVersion": 1,
       "position": [
-        1104,
-        752
+        800,
+        640
       ],
-      "id": "e16e4a7b-974a-417c-ae41-1fb4689b428f",
-      "name": "Wikipedia1"
+      "id": "5c114fea-79d8-4575-b519-0b652b72ad95",
+      "name": "Analyze audio",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "MBmjGgkuDpBUufJu",
+          "name": "Google Gemini(PaLM) Api account 2"
+        }
+      }
     },
     {
-      "parameters": {},
-      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
-      "typeVersion": 1,
+      "parameters": {
+        "jsCode": "return [\n  {\n    json: {\n      body: $input.first().json.payload.body,\n      mediaUrl: $input.first().json.payload.mediaUrl.replace(\n        \"http://localhost:3000\",\n        //replace this link if not statis\n        //im using waha with cloudflare tunnel\n        \"YOUR LINK REPLACE THIS\"\n      )\n    }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
       "position": [
-        1200,
-        656
+        480,
+        464
       ],
-      "id": "20ec1131-5861-42a6-b57a-a669376c0c51",
-      "name": "Calculator1"
-    },
-    {
-      "parameters": {},
-      "type": "@n8n/n8n-nodes-langchain.toolThink",
-      "typeVersion": 1.1,
-      "position": [
-        1200,
-        752
-      ],
-      "id": "32d416bc-2c10-4625-91ca-e24cb6e93e97",
-      "name": "Think1"
-    },
-    {
-      "parameters": {},
-      "type": "@n8n/n8n-nodes-langchain.toolThink",
-      "typeVersion": 1.1,
-      "position": [
-        608,
-        32
-      ],
-      "id": "e5535528-770d-4e0c-8ddb-78d80a42f185",
-      "name": "Think2"
+      "id": "964bb07e-6de3-41b2-b3f5-47616cd9ee18",
+      "name": "replace localhost to other link"
     }
   ],
-  "pinData": {},
   "connections": {
     "WAHA Trigger": {
       "main": [
@@ -1003,24 +1262,6 @@
         [
           {
             "node": "Send a text message",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "If": {
-      "main": [
-        [
-          {
-            "node": "Code",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "If2",
             "type": "main",
             "index": 0
           }
@@ -1152,7 +1393,7 @@
       "main": [
         [
           {
-            "node": "If",
+            "node": "Switch1",
             "type": "main",
             "index": 0
           }
@@ -1164,6 +1405,16 @@
         [
           {
             "node": "WA AI Response Agent",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "WA AI Response Agent1",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "WA AI Response Agent2",
             "type": "ai_tool",
             "index": 0
           }
@@ -1209,6 +1460,11 @@
             "node": "AI Agent - Create Image From Prompt",
             "type": "ai_memory",
             "index": 0
+          },
+          {
+            "node": "WA AI Response Agent2",
+            "type": "ai_memory",
+            "index": 0
           }
         ]
       ]
@@ -1217,7 +1473,7 @@
       "main": [
         [
           {
-            "node": "Switch",
+            "node": "replace localhost to other link",
             "type": "main",
             "index": 0
           }
@@ -1225,6 +1481,17 @@
         [
           {
             "node": "WA AI Response Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze image": {
+      "main": [
+        [
+          {
+            "node": "WA AI Response Agent1",
             "type": "main",
             "index": 0
           }
@@ -1276,17 +1543,6 @@
         ]
       ]
     },
-    "Analyze image": {
-      "main": [
-        [
-          {
-            "node": "WA AI Response Agent1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Google Gemini Chat Model2": {
       "ai_languageModel": [
         [
@@ -1316,16 +1572,10 @@
             "node": "WA AI Response Agent",
             "type": "ai_tool",
             "index": 0
-          }
-        ]
-      ]
-    },
-    "replace localhost to other link": {
-      "main": [
-        [
+          },
           {
-            "node": "Analyze image",
-            "type": "main",
+            "node": "WA AI Response Agent1",
+            "type": "ai_tool",
             "index": 0
           }
         ]
@@ -1357,39 +1607,42 @@
       "main": [
         [
           {
-            "node": "replace localhost to other link",
+            "node": "Analyze image",
             "type": "main",
             "index": 0
           }
         ],
-        [
-          {
-            "node": "replace localhost to other link1",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Send a text message3",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Send a text message3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "replace localhost to other link1": {
-      "main": [
         [
           {
             "node": "Analyze document",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Analyze audio",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a text message3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a text message3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a text message3",
             "type": "main",
             "index": 0
           }
@@ -1403,6 +1656,16 @@
             "node": "WA AI Response Agent",
             "type": "ai_tool",
             "index": 0
+          },
+          {
+            "node": "WA AI Response Agent1",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "WA AI Response Agent2",
+            "type": "ai_tool",
+            "index": 0
           }
         ]
       ]
@@ -1412,6 +1675,16 @@
         [
           {
             "node": "WA AI Response Agent",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "WA AI Response Agent1",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "WA AI Response Agent2",
             "type": "ai_tool",
             "index": 0
           }
@@ -1429,70 +1702,161 @@
         ]
       ]
     },
-    "Think2": {
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "WA AI Response Agent2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "WA AI Response Agent2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a text message4": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WA AI Response Agent2": {
+      "main": [
+        [
+          {
+            "node": "JSON Parse2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JSON Parse2": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items2": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Send a text message4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Date & Time": {
       "ai_tool": [
         [
           {
-            "node": "AI Agent - Create Image From Prompt",
+            "node": "WA AI Response Agent",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "WA AI Response Agent1",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "WA AI Response Agent2",
             "type": "ai_tool",
             "index": 0
           }
         ]
       ]
     },
-    "SerpAPI1": {
+    "OpenWeatherMap": {
       "ai_tool": [
         [
           {
+            "node": "WA AI Response Agent",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
             "node": "WA AI Response Agent1",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "WA AI Response Agent2",
             "type": "ai_tool",
             "index": 0
           }
         ]
       ]
     },
-    "Calculator1": {
-      "ai_tool": [
+    "Analyze audio": {
+      "main": [
         [
           {
-            "node": "WA AI Response Agent1",
-            "type": "ai_tool",
+            "node": "JSON Parse1",
+            "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Wikipedia1": {
-      "ai_tool": [
+    "replace localhost to other link": {
+      "main": [
         [
           {
-            "node": "WA AI Response Agent1",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Think1": {
-      "ai_tool": [
-        [
-          {
-            "node": "WA AI Response Agent1",
-            "type": "ai_tool",
+            "node": "Switch",
+            "type": "main",
             "index": 0
           }
         ]
       ]
     }
   },
-  "active": false,
-  "settings": {
-    "executionOrder": "v1"
-  },
-  "versionId": "293eda9f-0ea2-4354-add3-57d7fd74c381",
+  "pinData": {},
   "meta": {
     "instanceId": "5f80446c03208b395460e0714de575f1bc02e4fd617bffc9097cfd2c8b6734af"
-  },
-  "id": "p8O2gnNihZec9RHQ",
-  "tags": []
+  }
 }
